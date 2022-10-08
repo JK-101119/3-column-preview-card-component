@@ -1,143 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- displays site properly based on user's device -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <!-- Google font link: Big Shoulders Display -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google font link:Lexend Deca -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
 
-<head>
-  <meta charset="UTF-8">
-  <!-- displays site properly based on user's device -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <!-- Google font link: Big Shoulders Display -->
-  <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap" rel="stylesheet">
-  <!-- Google font link:Lexend Deca -->
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
-
-  <title>Frontend Mentor | 3-column preview card component</title>
-  <style>
-    *,
-    ::after,
-    ::before {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --clr-orange: hsl(31, 77%, 52%);
-      --clr-dark-cyan: hsl(184, 100%, 22%);
-      --clr-very-dark-cyan: hsl(179, 100%, 13%);
-    }
-
-    /* Main container */
-    .container {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    @media (max-width : 715px) {
-      .container {
-        display: flex;
-        flex-direction: column;
+    <title>Frontend Mentor | 3-column preview card component</title>
+    <style>
+      *,
+      ::after,
+      ::before {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
-    }
 
-    /* Cards  */
-    .card {
-      max-width: 25ch;
-      background-color: rgb(236, 15, 15);
-      padding: 3em 2em;
-      font-family: Lexend Deca, serif;
-      color: #fff;
-      letter-spacing: 1px;
-    }
+      :root {
+        --clr-orange: hsl(31, 77%, 52%);
+        --clr-dark-cyan: hsl(184, 100%, 22%);
+        --clr-very-dark-cyan: hsl(179, 100%, 13%);
+      }
 
-    .card:nth-of-type(1) {
-      background-color: var(--clr-orange);
-    }
+      /* Main container */
+      .container {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
 
-    .card:nth-of-type(2) {
-      background-color: var(--clr-dark-cyan);
-    }
+      @media (max-width: 715px) {
+        .container {
+          display: flex;
+          flex-direction: column;
+        }
+      }
 
-    .card:nth-of-type(3) {
-      background-color: var(--clr-very-dark-cyan);
-    }
+      /* Cards  */
+      .card {
+        max-width: 25ch;
+        background-color: rgb(236, 15, 15);
+        padding: 3em 2em;
+        font-family: Lexend Deca, serif;
+        color: #fff;
+        letter-spacing: 1px;
+      }
 
-    p {
-      font-size: 1rem;
-    }
+      .card:nth-of-type(1) {
+        background-color: var(--clr-orange);
+      }
 
-    h1 {
-      padding: 0.5em 0;
-      font-size: 2.5rem;
-      font-family: Big Shoulders Display, serif;
-    }
+      .card:nth-of-type(2) {
+        background-color: var(--clr-dark-cyan);
+      }
 
-    /* Button : Learn More */
-    .btn {
-      display: inline-block;
-      text-decoration: none;
-      color: #fff;
-      text-transform: capitalize;
-      background-color: transparent;
-      border: 1px solid;
-      border-radius: 2em;
-      margin-top: 2em;
-      padding: 0.7em 1.5em;
-    }
+      .card:nth-of-type(3) {
+        background-color: var(--clr-very-dark-cyan);
+      }
 
-    /* Button hover effect */
-    .orange:hover {
-      background-color: #fff;
-      color: hsl(31, 77%, 52%);
+      p {
+        font-size: small;
+      }
 
-    }
+      h1 {
+        padding: 0.5em 0;
+        font-size: 2.5rem;
+        font-family: Big Shoulders Display, serif;
+      }
 
-    .cyan:hover {
-      background-color: #fff;
-      color: hsl(184, 100%, 22%)
-    }
+      /* Button : Learn More */
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        color: #fff;
+        text-transform: capitalize;
+        background-color: #fff;
+        border: 1px solid;
+        border-radius: 2em;
+        margin-top: 4em;
+        padding: 0.7em 1.5em;
+      }
 
-    .dark-cyan:hover {
-      background-color: #fff;
-      color: hsl(179, 100%, 13%)
-    }
-  </style>
-</head>
+      .orange {
+        color: hsl(31, 77%, 52%);
+      }
 
-<body>
-  <div class="container">
-    <div class="card">
-      <img src="images/icon-sedans.svg" alt="">
-      <h1>Sedans</h1>
-      <p>
-        Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city
-        or on your next road trip.
-      </p>
-      <a class="btn orange" href="#">learn more</a>
+      .cyan {
+        color: hsl(184, 100%, 22%);
+      }
+
+      .dark-cyan {
+        color: hsl(179, 100%, 13%);
+      }
+
+      /* Button hover effect */
+      .orange:hover {
+        color: #fff;
+        background-color: transparent;
+      }
+
+      .cyan:hover {
+        color: #fff;
+        background-color: transparent;
+      }
+
+      .dark-cyan:hover {
+        background-color: transparent;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <img src="images/icon-sedans.svg" alt="" />
+        <h1>Sedans</h1>
+        <p>
+          Choose a sedan for its affordability and excellent fuel economy. Ideal
+          for cruising in the city or on your next road trip.
+        </p>
+        <a class="btn orange" href="#">learn more</a>
+      </div>
+      <div class="card">
+        <img src="images/icon-suvs.svg" alt="" />
+        <h1>SUVs</h1>
+        <p>
+          Take an SUV for its spacious interior, power, and versatility. Perfect
+          for your next family vacation and off-road adventures.
+        </p>
+        <a class="btn cyan" href="#">learn more</a>
+      </div>
+      <div class="card">
+        <img src="images/icon-luxury.svg" alt="" />
+        <h1>Luxury</h1>
+        <p>
+          Cruise in the best car brands without the bloated prices. Enjoy the
+          enhanced comfort of a luxury rental and arrive in style.
+        </p>
+        <a class="btn dark-cyan" href="#">learn more</a>
+      </div>
     </div>
-    <div class="card">
-      <img src="images/icon-suvs.svg" alt="">
-      <h1>SUVs</h1>
-      <p>
-        Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation
-        and off-road adventures.
-      </p>
-      <a class="btn cyan" href="#">learn more</a>
-    </div>
-    <div class="card">
-      <img src="images/icon-luxury.svg" alt="">
-      <h1>Luxury</h1>
-      <p>
-        Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury
-        rental and arrive in style.
-      </p>
-      <a class="btn dark-cyan" href="#">learn more</a>
-    </div>
-  </div>
-
-</body>
-
+  </body>
 </html>
